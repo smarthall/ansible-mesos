@@ -1,0 +1,14 @@
+---
+- name: Initial machine setup
+  hosts: all
+  roles:
+   # Machine setup roles
+   - vagrant_sudo_fix
+   - epel
+   - disable_firewall
+
+   - role: etc_hosts
+     interface: enp0s8
+
+#- include: "mesos-master.yml"
+#- include: "mesos-slave.yml"

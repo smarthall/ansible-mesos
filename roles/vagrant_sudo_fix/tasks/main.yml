@@ -1,0 +1,23 @@
+---
+- name: Fix sudo to allow sudo to all users
+  lineinfile:
+    dest: /etc/sudoers
+    regexp: '^%wheel ALL\='
+    line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
+
+- name: Dont require a tty
+  lineinfile:
+    dest: /etc/sudoers
+    regexp: '^Defaults   !visiblepw$'
+    state: absent
+    validate: 'visudo -cf %s'
+
+
+- name: Dont require a tty
+  lineinfile:
+    dest: /etc/sudoers
+    regexp: '^#Defaults   !visiblepw$'
+    line: '#Defaults   !visiblepw'
+    validate: 'visudo -cf %s'
+
