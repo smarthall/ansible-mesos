@@ -1,0 +1,12 @@
+---
+- name: Install Mesos
+  yum: name=mesos state=latest
+
+- name: Configure Zookeeper Servers
+  template:
+    src: zk_list.j2
+    dest: /etc/mesos/zk
+    owner: root
+    group: root
+    mode: 0644
+

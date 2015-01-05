@@ -1,0 +1,1 @@
+zk://{% for zk in groups.zookeeper %}{{ zk }}:2181{% if not loop.last %},{% endif %}{% endfor %}/mesos

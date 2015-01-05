@@ -1,0 +1,4 @@
+---
+dependencies:
+  - role: mesos_common
+    tags: [mesos, mesos_common]

@@ -1,0 +1,6 @@
+---
+- name: Setup the Zookeeper servers
+  hosts: master
+  roles:
+    - role: mesos_master
+      tags: [mesos_master, mesos, app]
