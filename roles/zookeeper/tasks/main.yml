@@ -9,4 +9,17 @@
   yum: name={{ item }} state=latest
   with_items:
     - zookeeper-server
+  register: zoopkg
+
+- name: Init the zookeeper package
+  command: /etc/init.d/zookeeper-server init
+  when: zoopkg|changed
+
+- name: Configure the master standalone
+  copy:
+    content: "1"
+    dest: "/var/lib/zookeeper/myid"
+
+- name: Start Zookeeper
+  service: name=zookeeper-server state=started enabled=yes
 
