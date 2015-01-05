@@ -1,0 +1,13 @@
+---
+- name: Install Mesos and Friends
+  yum: name={{ item }} state=latest
+  with_items:
+    - mesos
+    - marathon
+    - chronos
+
+- name: Disable Mesos Master from starting
+  service: name=mesos-master state=stopped enabled=no
+
+- name: Enable Mesos Slave
+  service: name=mesos-slave state=started enabled=yes

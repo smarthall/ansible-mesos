@@ -1,0 +1,6 @@
+---
+- name: Setup the Zookeeper servers
+  hosts: zookeeper
+  roles:
+    - role: zookeeper
+      tags: [zookeeper, app]

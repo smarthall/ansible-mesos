@@ -1,0 +1,12 @@
+---
+- name: Install the CDH Repository key
+  rpm_key: key="http://archive.cloudera.com/cdh4/redhat/6/x86_64/cdh/RPM-GPG-KEY-cloudera" state=present
+
+- name: Install CDL repository
+  yum: name="http://archive.cloudera.com/cdh4/one-click-install/redhat/6/x86_64/cloudera-cdh-4-0.x86_64.rpm" state="installed"
+
+- name: Install Zookeeper
+  yum: name={{ item }} state=latest
+  with_items:
+    - zookeeper-server
+

@@ -14,10 +14,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     machine.vm.network 'private_network', ip: "192.168.77.10"
   end
 
-  config.vm.define 'slave-2' do |machine|
-    machine.vm.hostname = 'slave-2'
-    machine.vm.network 'private_network', ip: "192.168.77.11"
-  end
+#  config.vm.define 'slave-2' do |machine|
+#    machine.vm.hostname = 'slave-2'
+#    machine.vm.network 'private_network', ip: "192.168.77.11"
+#  end
 
   config.vm.define 'master-1' do |machine|
     machine.vm.hostname = 'master-1'
@@ -33,6 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ansible.groups = {
         "slave" => ["slave-1", "slave-2", "slave-3"],
         "master" => ["master-1"],
+        "zookeeper" => ["master-1"],
       }
     end
   end
