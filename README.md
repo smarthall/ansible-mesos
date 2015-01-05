@@ -1,4 +1,4 @@
-ansible-pgpool
+ansible-mesos
 ==============
 
-Ansible configuration to setup a HA postgres cluster with automated failover and recovery.
+Ansible configuration to setup a simple mesos cluster for testing.
