@@ -1,0 +1,12 @@
+{ 
+ "schedule": "R\/2014-09-25T17:22:00Z\/PT2M",
+ "name": "date",
+ "container": {
+   "type": "DOCKER",
+   "image": "library/busybox:latest"
+ },
+ "cpus": "0.1",
+ "mem": "64",
+ "uris": [],
+ "command": "echo 'Running Chronos Job :D'; date -u +%T"
+}

@@ -5,6 +5,12 @@
     dest: /etc/mesos-slave/ip
   notify: restart mesos-slave
 
+- name: Configure the hostname
+  copy:
+    content: "{{ hostvars[inventory_hostname]['ansible_' + bind_interface].ipv4.address }}"
+    dest: /etc/mesos-slave/hostname
+  notify: restart mesos-slave
+
 - name: Configure the containerizers
   copy:
     content: "docker,mesos"
