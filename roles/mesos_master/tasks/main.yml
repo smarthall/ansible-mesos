@@ -1,10 +1,4 @@
 ---
-- name: Install Mesos Frameworks
-  yum: name={{ item }} state=latest
-  with_items:
-    - marathon
-    - chronos
-
 - name: Configure the cluster name
   copy:
     content: "{{ cluster_name }}"
@@ -22,10 +16,4 @@
 
 - name: Disable Mesos Slave
   service: name=mesos-slave state=stopped enabled=no
-
-- name: Enable Marathon
-  service: name=marathon state=started enabled=yes
-
-- name: Enable Chronos
-  service: name=chronos state=started enabled=yes
 

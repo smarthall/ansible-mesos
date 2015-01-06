@@ -2,3 +2,7 @@
 dependencies:
   - role: mesos_common
     tags: [mesos, mesos_common]
+  - role: chronos
+    tags: [chronos, mesos_common]
+  - role: marathon
+    tags: [marathon, mesos_common]

@@ -1,0 +1,7 @@
+---
+- name: Install Chronos
+  yum: name=chronos state=latest
+
+- name: Enable Chronos
+  service: name=chronos state=started enabled=yes
+

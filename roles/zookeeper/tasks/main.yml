@@ -15,6 +15,10 @@
   command: /etc/init.d/zookeeper-server init
   when: zoopkg|changed
 
+- name: Start the service manually
+  command: systemctl start zookeeper-server
+  when: zoopkg|changed
+
 - name: Configure the master standalone
   copy:
     content: "1"

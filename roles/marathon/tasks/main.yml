@@ -1,0 +1,20 @@
+---
+- name: Install Marathon
+  yum: name=marathon state=installed
+
+- name: Make marathon config directories
+  file:
+    state: directory
+    path: "{{ item }}"
+  with_items:
+    - /etc/marathon
+    - /etc/marathon/conf
+
+- name: Configure the Marathon callbacks
+  copy:
+    content: "http_callback"
+    dest: /etc/marathon/conf/event_subscriber
+  notify: restart marathon
+
+- name: Enable Marathon
+  service: name=marathon state=started enabled=yes
