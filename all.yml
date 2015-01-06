@@ -12,4 +12,4 @@
 
 - include: "zookeeper.yml"
 - include: "mesos-master.yml"
-#- include: "mesos-slave.yml"
+- include: "mesos-slave.yml"

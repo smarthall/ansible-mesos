@@ -1,0 +1,7 @@
+---
+- name: Setup the Mesos Slaves
+  hosts: slave
+  roles:
+    - role: mesos_slave
+      tags: [mesos_slave, mesos, app]
+      bind_interface: enp0s8

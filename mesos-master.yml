@@ -1,6 +1,7 @@
 ---
-- name: Setup the Zookeeper servers
+- name: Setup the Mesos Masters
   hosts: master
   roles:
     - role: mesos_master
       tags: [mesos_master, mesos, app]
+      bind_interface: enp0s8

@@ -22,9 +22,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define 'master-1' do |machine|
     machine.vm.hostname = 'master-1'
         machine.vm.network 'private_network', ip: "192.168.77.254"
-        machine.vm.network 'forwarded_port', guest: 8080, host: 8080
-        machine.vm.network 'forwarded_port', guest: 5050, host: 5050
-        machine.vm.network 'forwarded_port', guest: 4400, host: 4400
 
     machine.vm.provision :ansible do |ansible|
       ansible.playbook = "all.yml"

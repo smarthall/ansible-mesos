@@ -1,13 +1,31 @@
 ---
-- name: Install Mesos and Friends
+- name: Install Mesos Frameworks
   yum: name={{ item }} state=latest
   with_items:
     - marathon
     - chronos
+
+- name: Configure the cluster name
+  copy:
+    content: "{{ cluster_name }}"
+    dest: /etc/mesos-master/cluster
+  notify: restart mesos-master
+
+- name: Configure the bind interface
+  copy:
+    content: "{{ hostvars[inventory_hostname]['ansible_' + bind_interface].ipv4.address }}"
+    dest: /etc/mesos-master/ip
+  notify: restart mesos-master
 
 - name: Enable Mesos Master
   service: name=mesos-master state=started enabled=yes
 
 - name: Disable Mesos Slave
   service: name=mesos-slave state=stopped enabled=no
+
+- name: Enable Marathon
+  service: name=marathon state=started enabled=yes
+
+- name: Enable Chronos
+  service: name=chronos state=started enabled=yes
 
