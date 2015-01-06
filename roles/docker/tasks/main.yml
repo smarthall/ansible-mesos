@@ -2,3 +2,6 @@
 - name: Install Docker
   yum: name=docker state=installed
 
+- name: Start Docker Daemon
+  service: name=docker state=started enabled=yes
+

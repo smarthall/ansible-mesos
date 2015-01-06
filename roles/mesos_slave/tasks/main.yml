@@ -17,15 +17,9 @@
     dest: /etc/mesos-slave/executor_registration_timeout
   notify: restart mesos-slave
 
-- name: Configure the container startup time
-  copy:
-    content: "10mins"
-    dest: /etc/mesos-slave/task_launch_timeout
-  notify: restart mesos-slave
-
 - name: Disable Mesos Master
   service: name=mesos-master state=stopped enabled=no
 
-- name: Disable Mesos Slave
+- name: Enable Mesos Slave
   service: name=mesos-slave state=started enabled=yes
 
