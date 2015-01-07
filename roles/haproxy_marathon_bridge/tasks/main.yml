@@ -1,0 +1,33 @@
+---
+- name: Install HAProxy
+  yum: name=haproxy state=installed
+
+- name: Start HAProxy
+  service: name=haproxy state=started enabled=yes
+
+- name: Make HAProxy Bridge Config Directory
+  file:
+    path: /etc/haproxy-marathon-bridge/
+    state: directory
+
+- name: Install the HAProxy bridge script
+  copy:
+    src: haproxy-marathon-bridge
+    dest: /usr/local/bin/haproxy-marathon-bridge
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Configure the HAProxy Marathon Bridge
+  template:
+    src: marathons.j2
+    dest: /etc/haproxy-marathon-bridge/marathons
+
+- name: Setup the cronjob
+  cron:
+    name: haproxy-marathon-bridge
+    cron_file: haproxy-marathon-bridge
+    user: root
+    job: /usr/local/bin/haproxy-marathon-bridge logged refresh_system_haproxy $(cat /etc/haproxy-marathon-bridge/marathons)
+    state: present
+

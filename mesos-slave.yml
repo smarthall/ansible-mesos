@@ -7,3 +7,6 @@
     - role: mesos_slave
       tags: [mesos_slave, mesos, app]
       bind_interface: enp0s8
+
+    - role: haproxy_marathon_bridge
+      tags: [haproxy, haproxy_marathon_bridge, marathon, app]
