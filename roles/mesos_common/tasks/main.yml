@@ -1,6 +1,6 @@
 ---
 - name: Install Mesos
-  yum: name=mesos state=latest
+  yum: name=mesos state=installed
 
 - name: Configure Zookeeper Servers
   template:

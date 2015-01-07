@@ -5,3 +5,10 @@
     - role: mesos_master
       tags: [mesos_master, mesos, app]
       bind_interface: enp0s8
+
+    - role: marathon
+      tags: [marathon, mesos, app]
+
+    - role: chronos
+      tags: [chronos, mesos, app]
+
