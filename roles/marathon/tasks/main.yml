@@ -1,6 +1,6 @@
 ---
 - name: Install Marathon
-  yum: name=marathon state=installed
+  yum: name=marathon-{{ marathon_version }} state=installed
 
 - name: Make marathon config directories
   file:

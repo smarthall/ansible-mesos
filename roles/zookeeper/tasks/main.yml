@@ -2,7 +2,7 @@
 - name: Install Zookeeper
   yum: name={{ item }} state=installed
   with_items:
-    - mesosphere-zookeeper
+          - mesosphere-zookeeper-{{ zookeeper_version }}
 
 - name: Configure the master standalone
   copy:

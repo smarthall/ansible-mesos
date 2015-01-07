@@ -1,6 +1,8 @@
 ---
 - name: Setup the Mesos Masters
   hosts: master
+  vars:
+    - vars/mesos.yml
   roles:
     - role: mesos_master
       tags: [mesos_master, mesos, app]

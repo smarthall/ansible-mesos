@@ -1,6 +1,8 @@
 ---
 - name: Setup the Zookeeper servers
   hosts: zookeeper
+  vars:
+    - vars/mesos.yml
   roles:
     - role: zookeeper
       tags: [zookeeper, app]

@@ -1,6 +1,6 @@
 ---
 - name: Install Mesos
-  yum: name=mesos state=installed
+yum: name=mesos-{{ mesos_version }} state=installed
 
 - name: Configure Zookeeper Servers
   template:
