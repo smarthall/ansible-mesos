@@ -1,6 +1,6 @@
 ---
 - name: Install Chronos
-  yum: name=chronos-{{ chronos_version }} state=installed
+  yum: name="chronos-{{ chronos_version }}" state=installed
 
 - name: Enable Chronos
   service: name=chronos state=started enabled=yes
