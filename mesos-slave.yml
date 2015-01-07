@@ -1,7 +1,7 @@
 ---
 - name: Setup the Mesos Slaves
   hosts: slave
-  vars:
+  vars_files:
     - vars/mesos.yml
   roles:
     - role: mesos_slave

@@ -1,7 +1,7 @@
 ---
 - name: Setup the Zookeeper servers
   hosts: zookeeper
-  vars:
+  vars_files:
     - vars/mesos.yml
   roles:
     - role: zookeeper
