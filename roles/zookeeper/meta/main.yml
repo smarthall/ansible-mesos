@@ -1,0 +1,4 @@
+---
+dependencies:
+  - role: mesos_repository
+    tags: [mesos]
