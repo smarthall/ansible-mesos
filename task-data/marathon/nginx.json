@@ -2,13 +2,13 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "library/busybox:latest"
+      "image": "smarthall/example-nginx"
     }
   },
-  "id": "date",
+  "id": "nginx",
   "instances": 1,
   "cpus": 0.1,
   "mem": 32,
   "uris": [],
-  "cmd": "while sleep 10; do date -u +%T; done"
+  "ports": [8080]
 }
