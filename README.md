@@ -8,29 +8,29 @@ single master and two slaves.
 ## Details
 
 ### master-1
-*Role:* Master
+**Role:** Master
 
-*OS:* CentOS 7
+**OS:** CentOS 7
 
-*Apps:* Zookeeper, Mesos, Marathon, Chronos
+**Apps:** Zookeeper, Mesos, Marathon, Chronos
 
-*IP:* `192.168.77.254`
+**IP:** `192.168.77.254`
 
 ### slave-1
-*Role:* Slave
+**Role:** Slave
 
-*OS:* CentOS 7
+**OS:** CentOS 7
 
-*Apps:* Mesos, Docker, HAProxy
+**Apps:** Mesos, Docker, HAProxy
 
-*IP:* `192.168.77.10`
+**IP:** `192.168.77.10`
 
 ### slave-2
-*Role:* Slave
+**Role:** Slave
 
-*OS:* CentOS 7
+**OS:** CentOS 7
 
-*Apps:* Mesos, Docker, HAProxy
+**Apps:** Mesos, Docker, HAProxy
 
-*IP:* `192.168.77.11`
+**IP:** `192.168.77.11`
 
