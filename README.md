@@ -26,18 +26,18 @@ Marathon and chronos services.
 ### master-1
 - **Role:** Master
 - **OS:** CentOS 7
-- **Apps:** Zookeeper, Mesos, Marathon, Chronos
+- **Apps:** Zookeeper, [Mesos](http://192.168.77.254:5050/), [Marathon](http://192.168.77.254:8080/), [Chronos](http://192.168.77.254:4400/)
 - **IP:** `192.168.77.254`
 
 ### slave-1
 - **Role:** Slave
 - **OS:** CentOS 7
-- **Apps:** Mesos, Docker, HAProxy
+- **Apps:** Mesos, Docker, [HAProxy](http://192.168.77.10:9090/)
 - **IP:** `192.168.77.10`
 
 ### slave-2
 - **Role:** Slave
 - **OS:** CentOS 7
-- **Apps:** Mesos, Docker, HAProxy
+- **Apps:** Mesos, Docker, [HAProxy](http://192.168.77.11:9090/)
 - **IP:** `192.168.77.11`
 
