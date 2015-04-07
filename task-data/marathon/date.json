@@ -10,5 +10,6 @@
   "cpus": 0.1,
   "mem": 32,
   "uris": [],
+  "ports": [],
   "cmd": "while sleep 10; do date -u +%T; done"
 }
