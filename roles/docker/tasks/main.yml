@@ -1,4 +1,7 @@
 ---
+- name: Update to latest device-mapper
+  yum: name=device-mapper state=latest
+
 - name: Install Docker
   yum: name=docker state=installed
 
