@@ -1,5 +1,5 @@
 ---
-mesos_version: 0.21.0
-marathon_version: 0.7.6
-chronos_version: 2.3.0
+mesos_version: 0.22.0
+marathon_version: 0.8.1
+chronos_version: 2.3.2
 zookeeper_version: 3.4.6
